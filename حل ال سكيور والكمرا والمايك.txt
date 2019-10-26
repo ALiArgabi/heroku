@@ -1,0 +1,28 @@
+https://stackoverflow.com/questions/40696280/unsafely-treat-insecure-origin-as-secure-flag-is-not-working-on-chrome
+
+
+
+
+
+
+You must have missed some steps. Try to follow this
+
+Go to File Explorer then paste this to address bar >> C:\Program Files (x86)\Google\Chrome\Application (or just go to where you can find your chrome.exe)
+Right click chrome.exe > send to > Desktop (Create Shortcut)
+Go to your desktop then find the chrome shortcut you've created.
+Rename it to ChromeForTesting (this step is optional)
+Right click the shortcut, then Click Properties
+At the "Target", paste the following at the end of the link
+
+
+--user-data-dir=/tmp/foo --unsafely-treat-insecure-origin-as-secure=http://example.com
+
+
+
+
+
+
+
+
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"  --user-data-dir=/tmp/foo --unsafely-treat-insecure-origin-as-secure=http://192.168.8.100:3000
+
